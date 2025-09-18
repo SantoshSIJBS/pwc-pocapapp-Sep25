@@ -1,0 +1,22 @@
+{
+  // uncomment entries once all libraries have been installed via 'npm install'
+  "eslint.validate": [
+    // "cds",
+    // "csn",
+    // "csv",
+    // "csv (semicolon)",
+    // "tab",
+    // "tsv"
+  ],
+  "SAP HANA Database Explorer.ShowXsAdvancedConnections": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "DBSqlite",
+      "database": "${workspaceFolder:pocapapp}/db.sqlite"
+    }
+  ],
+  "SAP HANA SQLScript LSP.URL": "https://cf-us10-001.cf.hana-tooling.ingress.orchestration.prod-us10.hanacloud.ondemand.com/hrtt-service",
+  "SAP HANA SQLScript LSP.XsAdvancedHrttServiceUrl": ""
+}
