@@ -6,7 +6,7 @@ using {pocap.common as common} from '../db/common';
 using {Currency} from '@sap/cds/common';
 
 
-service CatalogService @(path: 'CatalogService') {
+service CatalogService @(path: 'CatalogService', requires: 'authenticated-user') {
 
     @Capabilities: {
         InsertRestrictions: {
@@ -26,9 +26,23 @@ service CatalogService @(path: 'CatalogService') {
 
     entity ProductInformation     as projection on master.product;
 
-    entity EmployeeDetails        as projection on master.employees;
+    entity EmployeeDetails @(restrict: [
+        {
+            grant : ['READ'], to : 'Viewer', where : 'bankName = $user.bankName'
+        },
+        {
+            grant : ['WRITE'], to : 'Admin'
+        }
+    ]) as projection on master.employees;
 
-    entity AddressInfo            as projection on master.address;
+    entity AddressInfo @(restrict: [
+        {
+            grant : ['READ'], to : 'Viewer', where : 'COUNTRY = $user.myCountry'
+        },
+        {
+            grant : ['WRITE'], to : 'Admin'
+        }
+    ]) as projection on master.address;
 
 
     entity PODetails @(
