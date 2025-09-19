@@ -24,7 +24,6 @@ service CatalogService @(path: 'CatalogService') {
     }
     entity BusinessPartnerService as projection on master.businesspartner;
 
-    @readonly
     entity ProductInformation     as projection on master.product;
 
     entity EmployeeDetails        as projection on master.employees;

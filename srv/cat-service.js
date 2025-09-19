@@ -29,9 +29,6 @@ module.exports = cds.service.impl( async function(){
                 TAX_AMOUNT : { '+=' : 200}
             }).where(ID);
 
-            // Step - 4 : Get the response using read entities(Syntax - 1)
-//            await transaction.run(SELECT.from(PODetails).where(ID));
-
             // Step - 5 : Return the response
             return response;
         } catch (error) {
