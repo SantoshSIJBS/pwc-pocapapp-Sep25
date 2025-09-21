@@ -35,14 +35,19 @@ service CatalogService @(path: 'CatalogService', requires: 'authenticated-user')
         }
     ]) as projection on master.employees;
 
-    entity AddressInfo @(restrict: [
-        {
-            grant : ['READ'], to : 'Viewer', where : 'COUNTRY = $user.myCountry'
-        },
-        {
-            grant : ['WRITE'], to : 'Admin'
-        }
-    ]) as projection on master.address;
+    extend entity master.address with {
+        countryE : Association to master.countries
+                            on countryE.iso2 = COUNTRY;
+    }
+
+    extend entity master.address with {
+        countryDesc : String = countryE.name    @(title: '{i18n>COUNTRY}');
+    }
+    entity AddressInfo  as 
+        select from master.address{
+            *
+        };
+
 
 
     entity PODetails @(
@@ -93,8 +98,6 @@ service CatalogService @(path: 'CatalogService', requires: 'authenticated-user')
         };
 
     entity POItems                as projection on transaction.purchaseitems;
-
-    entity student                as projection on master.student;
 
     /*
     type employeeType {

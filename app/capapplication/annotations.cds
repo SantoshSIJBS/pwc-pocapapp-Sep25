@@ -39,7 +39,7 @@ annotate CatalogService.PODetails with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : PARTNER_GUID.ADDRESS_GUID.COUNTRY
+            Value : PARTNER_GUID.ADDRESS_GUID.countryDesc
         },
         {
             $Type : 'UI.DataField',
