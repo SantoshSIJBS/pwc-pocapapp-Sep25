@@ -1,0 +1,18 @@
+{
+    "welcomeFile" : "capapplication/webapp/",
+    "authenticationMethod" : "route",
+    "sessionTimeout" : 100,
+    "routes" : [
+        {
+            "source" : "^/capapplication/webapp/(.*)",
+            "target" : "$1",
+            "localDir" : "capapplication/webapp/",
+            "autheticationType" : "xsuaa"
+        },
+        {
+            "source": "^/(.*)$",
+            "destination": "srv-api",
+            "autheticationType": "xsuaa"
+        }
+    ]
+}
