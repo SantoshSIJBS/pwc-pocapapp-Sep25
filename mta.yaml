@@ -35,6 +35,7 @@ modules:
     path: gen/srv
     parameters:
       instances: 1
+      memory: 256M
       buildpack: nodejs_buildpack
     build-parameters:
       builder: npm-ci

@@ -1,18 +1,19 @@
 {
     "welcomeFile" : "capapplication/webapp/",
-    "authenticationMethod" : "route",
+    "authenticationMethod": "route",
     "sessionTimeout" : 100,
+    "pluginMetadataEndpoint" : "/metadata",
     "routes" : [
         {
             "source" : "^/capapplication/webapp/(.*)",
             "target" : "$1",
             "localDir" : "capapplication/webapp/",
-            "autheticationType" : "xsuaa"
+            "authenticationType" : "xsuaa"
         },
         {
-            "source": "^/(.*)$",
-            "destination": "srv-api",
-            "autheticationType": "xsuaa"
+            "source" : "^/(.*)$",
+            "destination" : "srv-api",
+            "authenticationType" : "xsuaa"
         }
     ]
 }
