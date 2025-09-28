@@ -70,20 +70,21 @@ POST http://localhost:4004/odata/v4/CatalogService/createEmployee
 Content-Type: application/json
 
 {
-      "accountNumber": "777555000",
-      "bankId": "519898100",
+      "accountNumber": "777555111",
+      "bankId": "5198981011",
       "bankName": "State Bank of India",
-      "email": "mr.sam@itelo.info",
+      "email": "mr.ABC@itelo.info",
       "gender": "M",
       "language": "E",
-      "loginName": "MRSAM",
-      "nameFirst": "SAM",
+      "loginName": "MRABC",
+      "nameFirst": "ABC",
       "nameInitials": null,
       "nameLast": "R",
       "nameMiddle": null,
-      "phone": "+91 994 114 1277",
+      "phone": "+91 994 114 1299",
       "salaryAmount": "79999.00"
 }
 
 ###
 GET  http://localhost:4004/odata/v4/CatalogService/getProducts('EUR')
+

@@ -6,7 +6,7 @@ using {pocap.common as common} from '../db/common';
 using {Currency} from '@sap/cds/common';
 
 
-service CatalogService @(path: 'CatalogService', requires: 'authenticated-user') {
+service CatalogService @(path: 'CatalogService') {
 
     @Capabilities: {
         InsertRestrictions: {
